@@ -1,12 +1,11 @@
-export default function ImageCard() {
+export default function ImageCard({ place, onSelect }) {
   return (
-    <div className="w-1/4 h-80 border border-slate-600 p-4 text-slate-500">
-      {/* <img /> */}
-      <h3 className="text-2xl mb-4">Card One</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quis.
-        Sint provident repudiandae nisi ratione officia at?
-      </p>
-    </div>
+    <li onClick={() => onSelect(place)} className="w-[30%] border border-slate-600 p-4 text-slate-500 hover:scale-105 transition-all">
+      <div className="mb-4">
+        <img src={place.src} />
+      </div>
+      <h3 className="text-2xl mb-2">{place.author}</h3>
+      <p className="mb-2">{place.caption}</p>
+    </li>
   );
 }
