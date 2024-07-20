@@ -2,15 +2,12 @@ import { useState } from "react";
 import { DATA as PLACES } from "../data";
 import ImageCard from "./components/ImageCard";
 import ImageModal from "./components/ImageModal";
-import { useRef } from "react";
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
-  const modal = useRef();
 
   function handleSelectImg(img) {
-    setSelectedImg(() => img);
-    modal.current.open();
+    setSelectedImg(img);
   }
 
   function handleDeselectImg() {
@@ -19,7 +16,7 @@ function App() {
 
   return (
     <>
-      {selectedImg && <ImageModal ref={modal} place={selectedImg} />}
+      {selectedImg && <ImageModal place={selectedImg} onClose={handleDeselectImg} />}
       <main className="p-8">
         <h1 className="text-9xl mb-24">Image Gallery</h1>
         <ul className="flex flex-wrap justify-between gap-16">

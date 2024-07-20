@@ -1,31 +1,31 @@
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { useEffect, useRef } from "react";
 
-const ImageModal = forwardRef(function ImageModal({ place }, ref) {
+function ImageModal({ place, onClose }) {
   const dialog = useRef();
 
-  useImperativeHandle(ref, () => {
-    return {
-      open: () => {
-        dialog.current.showModal();
-      },
-      close: () => {
-        dialog.current.close();
-      },
-    };
-  });
+  useEffect(() => {
+    dialog.current.showModal();
+  }, [place]);
+
+  function closeModal() {
+    dialog.current.close();
+    onClose();
+  }
 
   return (
     <dialog
+      onClick={closeModal}
       ref={dialog}
-      className="w-[30%] mt-12 mx-auto p-4 text-slate-500 backdrop:bg-black/50 backdrop:blur-md"
+      className="w-[30%] mt-12 mx-auto relative outline-none backdrop:bg-black/50 backdrop:blur-md"
     >
-      <div className="mb-4">
-        <img src={place.src} />
+      <img className="h-full" src={place.src} />
+
+      <div className="w-full text-white font-bold absolute bottom-0 py-4 pl-4 bg-gradient-to-t from-black">
+        <h3 className="text-2xl mb-2">{place.author}</h3>
+        <p className="mb-2">{place.caption}</p>
       </div>
-      <h3 className="text-2xl mb-2">{place.author}</h3>
-      <p className="mb-2">{place.caption}</p>
     </dialog>
   );
-});
+}
 
 export default ImageModal;
