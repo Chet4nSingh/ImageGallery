@@ -16,9 +16,9 @@ function ImageModal({ place, onClose }) {
     <dialog
       onClick={closeModal}
       ref={dialog}
-      className="w-[30%] mt-12 mx-auto relative outline-none backdrop:bg-black/50 backdrop:blur-md"
+      className="w-[30%] md:h-[80%] mt-20 mx-auto fixed outline-none backdrop:bg-stone-950/95 shadow-md"
     >
-      <img className="h-full" src={place.src} />
+      <img className="h-full w-full" src={place.src} />
 
       <div className="w-full text-white font-bold absolute bottom-0 py-4 pl-4 bg-gradient-to-t from-black">
         <h3 className="text-2xl mb-2">{place.author}</h3>

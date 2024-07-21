@@ -15,7 +15,7 @@ export const DATA = [
     caption: "This is a small caption",
   },
   {
-    src: "./src/assets/places/julian-rosner-oEJX8tFDYp0-unsplash.jpg",
+    src: "./src/assets/places/fotis-fotopoulos-yKs7e1Vq45Y-unsplash.jpg",
     author: "Julian Rosner",
     caption: "This is a small caption",
   },
@@ -30,7 +30,7 @@ export const DATA = [
     caption: "This is a small caption",
   },
   {
-    src: "./src/assets/places/rasmus-smedstrup-mortensen-FPg7X6AdfHg-unsplash.jpg",
+    src: "./src/assets/places/merve-kalafat-yilmaz-iEzw8wt--_A-unsplash.jpg",
     author: "Rasmus Smedstrup",
     caption: "This is a small caption",
   },
@@ -40,7 +40,7 @@ export const DATA = [
     caption: "This is a small caption",
   },
   {
-    src: "./src/assets/places/wolfgang-hasselmann-Fj08DOEYa4I-unsplash.jpg",
+    src: "./src/assets/places/shpetim-ujkani-HoGrlmhrJvY-unsplash.jpg",
     author: "Tom Brooke",
     caption: "This is a small caption",
   },

@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       {selectedImg && <ImageModal place={selectedImg} onClose={handleDeselectImg} />}
-      <main className="p-8">
+      <main className="p-8 mb-12">
         <h1 className="text-9xl mb-24">Image Gallery</h1>
         <ul className="flex flex-wrap justify-between gap-16">
           {PLACES.map((place) => {
